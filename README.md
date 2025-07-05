@@ -1,5 +1,5 @@
 <h1 align="center">Hi, I'm Amogh Manral</h1>
-<h3 align="center">CS student @ Duke</h3>
+<h3 align="center">CS student @ Duke University</h3>
 
 - 🔭 I’m currently: **working as a SWE intern @ SLB**
 
