@@ -3,8 +3,6 @@
 
 - I’m currently: **working as a SWE intern @ SLB**
 
-- What I'm learning at the moment: **Angular**
-
 - My latest project: [3DMazeSolver](https://github.com/amoghmanral/3DMazeSolver)
 
 - How to reach me: **manral.amogh@gmail.com**
