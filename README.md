@@ -1,5 +1,5 @@
 <h1 align="center">Hi, I'm Amogh</h1>
-<h3 align="center">CS @ Duke</h3>
+<h3 align="center">CS Student @ Duke</h3>
 
 - My latest project: [Course Map](https://github.com/amoghmanral/course-map)
 
