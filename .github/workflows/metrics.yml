@@ -1,49 +1,57 @@
-  name: Metrics
+name: Metrics
 
-  on:
-    schedule:
-      - cron: "0 0 * * *"
-    workflow_dispatch:
-    push:
-      branches: ["main", "master"]
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+  push:
+    branches: ["main", "master"]
 
-  jobs:
-    github-metrics:
-      runs-on: ubuntu-latest
-      permissions:
-        contents: write
-      steps:
-        - name: left
-          uses: lowlighter/metrics@latest
-          with:
-            token: ${{ secrets.METRICS_TOKEN }}
-            filename: metrics.left.svg
-            user: amoghmanral
-            template: classic
-            base: ""
-            config_timezone: America/New_York
-            plugin_languages: yes
-            plugin_languages_colors: github
-            plugin_languages_limit: 8
-            plugin_languages_details: lines, percentage
-            plugin_languages_indepth: yes
-            plugin_languages_ignored: jupyter notebook
-            plugin_stargazers: yes
-            plugin_stargazers_charts: yes
-            plugin_stargazers_charts_type: chartist
-            config_order: languages, stargazers
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      # LEFT PANEL - Profile & Languages
+      - name: left
+        uses: stalomeow/metrics@projects-v2
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          filename: metrics.left.svg
+          user: amoghmanral
+          template: classic
+          base: header, activity, community, repositories
+          config_timezone: America/New_York
 
-        - name: right
-          uses: lowlighter/metrics@latest
-          with:
-            token: ${{ secrets.METRICS_TOKEN }}
-            filename: metrics.right.svg
-            user: amoghmanral
-            template: classic
-            base: ""
-            config_timezone: America/New_York
-            plugin_achievements: yes
-            plugin_achievements_secrets: yes
-            plugin_achievements_threshold: C
-            plugin_achievements_display: detailed
-            plugin_achievements_limit: 0
+          # Issues/PRs status
+          plugin_followup: yes
+          plugin_followup_sections: user
+
+          # Languages breakdown
+          plugin_languages: yes
+          plugin_languages_colors: github
+          plugin_languages_limit: 8
+          plugin_languages_details: lines, percentage
+          plugin_languages_indepth: yes
+          plugin_languages_analysis_timeout: 15
+
+          config_order: base.header, followup, languages
+
+      # RIGHT PANEL - Achievements 
+      - name: right
+        uses: stalomeow/metrics@projects-v2
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          filename: metrics.right.svg
+          user: amoghmanral
+          template: classic
+          base: ""
+          config_timezone: America/New_York
+
+          # Achievements badges
+          plugin_achievements: yes
+          plugin_achievements_secrets: yes
+          plugin_achievements_threshold: C
+          plugin_achievements_display: detailed
+          plugin_achievements_limit: 0
