@@ -15,9 +15,9 @@
 
 <p align="center">
   <a href="https://github.com/amoghmanral">
-    <img width="400" src="https://github.com/amoghmanral/amoghmanral/blob/main/metrics.left.svg" />
+    <img width="400" align="top" src="https://github.com/amoghmanral/amoghmanral/blob/main/metrics.left.svg" />
   </a>
   <a href="https://github.com/amoghmanral">
-    <img width="400" src="https://github.com/amoghmanral/amoghmanral/blob/main/metrics.right.svg" />
+    <img width="400" align="top" src="https://github.com/amoghmanral/amoghmanral/blob/main/metrics.right.svg" />
   </a>
 </p>
