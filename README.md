@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-  CS Student @ Duke · Prev SWE Intern @ SLB
+  CS @ Duke
 </p>
 
 <br>
